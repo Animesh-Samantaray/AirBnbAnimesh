@@ -1,0 +1,40 @@
+<% layout('/layout/boiler') %>
+
+<div class="container-fluid px-5 py-4" style="max-width: 1200px;">
+  <h1 class="mb-4 fw-bold text-center">✏️ Edit Listing</h1>
+
+  <form action="/listing/<%= list._id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+
+    <div class="mb-4">
+      <label for="title" class="form-label fs-5">Title</label>
+      <input type="text" class="form-control form-control-lg" id="title" name="title" required value="<%= list.title %>">
+    </div>
+
+    <div class="mb-4">
+      <label for="description" class="form-label fs-5">Description</label>
+      <textarea class="form-control form-control-lg" id="description" name="description" rows="4" required><%= list.description %></textarea>
+    </div>
+
+    <div class="mb-4">
+      <label for="image" class="form-label fs-5">Image URL</label>
+      <input type="text" class="form-control form-control-lg" id="image" name="image" value="<%= list.image %>">
+    </div>
+
+    <div class="mb-4">
+      <label  class="form-label fs-5">Price (₹)</label>
+      <input type="number" class="form-control form-control-lg" id="price" name="price" required value="<%= list.price %>">
+    </div>
+
+    <div class="mb-4">
+      <label for="location" class="form-label fs-5">Location</label>
+      <input type="text" class="form-control form-control-lg" id="location" name="location" required value="<%= list.location %>">
+    </div>
+
+    <div class="mb-4">
+      <label for="country" class="form-label fs-5">Country</label>
+      <input type="text" class="form-control form-control-lg" id="country" name="country" required value="<%= list.country %>">
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg px-5 mt-3">💾 Update Listing</button>
+  </form>
+</div>
